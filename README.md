@@ -1,2 +1,2 @@
 # da-workshops-lab1
-First assignment from DA workshops by Mykola Pavlov
+Это первая лаборатрная работа по курсу лекций Николая Павлова "Data Analysis with R".
