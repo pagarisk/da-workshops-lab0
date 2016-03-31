@@ -6,7 +6,9 @@ source("http://www.openintro.org/stat/data/arbuthnot.R")
 arbuthnot$girls
 
 # exercise 2 - number of girls baptized trend
+png(file = "arbuthnot_girls.png", width = 800, height = 600, units = "px")
 plot(girls ~ year, data = arbuthnot)
+dev.off()
 
 # exercise 3 - proportion of boys over time
 png(file = "arbuthnot_boys_proportion.png", width = 800, height = 600, units = "px")
