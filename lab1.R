@@ -27,7 +27,7 @@ names(present) #  show the column names (variables)
 
 # question 2 - how do both datasets compare?
 str(arbuthnot) #  look at the first dataset's structure
-str(present) #  look at the second dataset's structure
+str(present)   #  look at the second dataset's structure
 # it is obvious that second dataset contains much bigger nubers than the first one
 
 # on average, the values in second dataset are larger by a factor of...
