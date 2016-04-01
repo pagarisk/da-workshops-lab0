@@ -1,4 +1,4 @@
-# da-workshops-lab1
+# da-workshops-lab0
 Это первая лабораторная работа по курсу лекций Николая Павлова "Data Analysis with R".
 
 ## Часть 1
@@ -108,16 +108,6 @@ plot((boys / (boys + girls)) ~ year, data = present, ylab = "proportion of boys,
 present$total = present$boys + present$girls   #  calculate the total for every year
 present[present$total == max(present$total), ] #  show the row with most total births
 ```
-<<<<<<< HEAD
-Еще один способ добиться того же результата - функция **which.max()**:
-```r
-> which.max(present$boys + present$girls)                   #   alternative one-liner, shows row number only
-[1] 22
-> present[which.max(present$boys + present$girls), "year"]  #   show the year with most births
-[1] 1961
-```
-
-=======
 В консоли результат получаем следующий:
 ```r
 > present$total = present$boys + present$girls   #  calculate the total for every year
@@ -125,8 +115,14 @@ present[present$total == max(present$total), ] #  show the row with most total b
    year    boys   girls   total
 22 1961 2186274 2082052 4268326
 ```
->>>>>>> 55ac24d2953bf53cc51f9a4d438d34b5a07dca08
 
+Еще один способ добиться того же результата - функция **which.max()**:
+```r
+> which.max(present$boys + present$girls)                   #   alternative one-liner, shows row number only
+[1] 22
+> present[which.max(present$boys + present$girls), "year"]  #   show the year with most births
+[1] 1961
+```
 
 [arb_girls_plot]: https://github.com/pagarisk/da-workshops-lab1/blob/master/arbuthnot_girls.png?raw=true
 [arb_boys_plot]: https://github.com/pagarisk/da-workshops-lab1/blob/master/arbuthnot_boys_proportion.png?raw=true
