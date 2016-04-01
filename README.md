@@ -97,7 +97,7 @@ str(present)   #  look at the second dataset's structure
 ### Задача 3
 Снова строим график зависимости **доли мальчиков** от **year**. Долю также рассчитываем *inline*, как и в предыдущий раз:
 ```r
-plot((boys / (boys + girls)) ~ year, data = present, ylab = "proportion of boys, arbuthnot")
+plot((boys / (boys + girls)) ~ year, data = present, ylim = c(0, 1), ylab = "proportion of boys, arbuthnot")
 ```
 Получаем следующий результат:
 ![arbethnot boys proportion plot][present_boys_plot]
