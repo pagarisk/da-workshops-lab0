@@ -108,6 +108,7 @@ plot((boys / (boys + girls)) ~ year, data = present, ylab = "proportion of boys,
 present$total = present$boys + present$girls   #  calculate the total for every year
 present[present$total == max(present$total), ] #  show the row with most total births
 ```
+<<<<<<< HEAD
 Еще один способ добиться того же результата - функция **which.max()**:
 ```r
 > which.max(present$boys + present$girls)                   #   alternative one-liner, shows row number only
@@ -116,6 +117,15 @@ present[present$total == max(present$total), ] #  show the row with most total b
 [1] 1961
 ```
 
+=======
+В консоли результат получаем следующий:
+```r
+> present$total = present$boys + present$girls   #  calculate the total for every year
+> present[present$total == max(present$total), ] #  show the row with most total births
+   year    boys   girls   total
+22 1961 2186274 2082052 4268326
+```
+>>>>>>> 55ac24d2953bf53cc51f9a4d438d34b5a07dca08
 
 
 [arb_girls_plot]: https://github.com/pagarisk/da-workshops-lab1/blob/master/arbuthnot_girls.png?raw=true
