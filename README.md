@@ -32,7 +32,7 @@ plot(girls ~ year, data = arbuthnot)
 ### Задача 3
 Строим график зависимости **доли мальчиков** от **year**. Долю рассчитываем *inline*, передавая формулу в параметр функции:
 ```r
-plot((boys / (boys + girls)) ~ year, data = arbuthnot, ylab = "proportion of boys, arbuthnot")
+plot((boys / (boys + girls)) ~ year, data = arbuthnot, ylim = c(0, 1), ylab = "proportion of boys, arbuthnot")
 ```
 Получаем следующий результат:
 ![arbethnot boys proportion plot][arb_boys_plot]
@@ -86,6 +86,14 @@ str(present)   #  look at the second dataset's structure
 ```
 Получаем, что среднее значение в первом наборе данных в 321 раз меньше, чем во втором.
 
+Как вариант, можно воспользоваться функцией **colMeans()** и получить коэффициенты для каждой колонки отдельно:
+```r
+> colMeans(present) / colMeans(arbuthnot)
+      year       boys      girls 
+  1.180593 319.209155 324.124597 
+```
+
+
 ### Задача 3
 Снова строим график зависимости **доли мальчиков** от **year**. Долю также рассчитываем *inline*, как и в предыдущий раз:
 ```r
@@ -99,6 +107,13 @@ plot((boys / (boys + girls)) ~ year, data = present, ylab = "proportion of boys,
 ```r
 present$total = present$boys + present$girls   #  calculate the total for every year
 present[present$total == max(present$total), ] #  show the row with most total births
+```
+Еще один способ добиться того же результата - функция **which.max()**:
+```r
+> which.max(present$boys + present$girls)                   #   alternative one-liner, shows row number only
+[1] 22
+> present[which.max(present$boys + present$girls), "year"]  #   show the year with most births
+[1] 1961
 ```
 
 
